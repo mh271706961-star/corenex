@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "corenex:item/material/curse_gold_ingot"
+  }
+}

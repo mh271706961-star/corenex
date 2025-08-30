@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "corenex:dragon_scale_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "corenex:material/dragon_scale"
+  }
+}

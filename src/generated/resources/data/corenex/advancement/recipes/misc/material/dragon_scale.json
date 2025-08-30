@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dragon_scale_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "corenex:dragon_scale_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "corenex:material/dragon_scale"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dragon_scale_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "corenex:material/dragon_scale"
+    ]
+  }
+}
