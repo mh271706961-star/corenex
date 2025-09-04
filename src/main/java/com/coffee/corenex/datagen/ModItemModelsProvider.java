@@ -16,10 +16,14 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(Moditems.DRAGON_SCALE.get());
         basicItem(Moditems.WITHER_BONE.get());
         basicItem(Moditems.CURSE_GOLD_INGOT.get());
+        basicItem(Moditems.DRAGON_INGOT.get());
+        basicItem(Moditems.CURSE_SOUL.get());
+        basicItem(Moditems.CURSE_STAR.get());
         basicItem(Moditems.DRAGON_SCALE_HELMET.get());
         basicItem(Moditems.DRAGON_SCALE_CHESTPLATE.get());
         basicItem(Moditems.DRAGON_SCALE_LEGGINGS.get());
         basicItem(Moditems.DRAGON_SCALE_BOOTS.get());
+
 
 
 

@@ -1,11 +1,12 @@
 package com.coffee.corenex.item;
 
 import com.coffee.corenex.Corenex;
+import com.coffee.corenex.item.custom.DragonScaleArmorItem;
+import com.coffee.corenex.potions.ModPotions;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -26,22 +27,30 @@ public class Moditems {
             ITEMS.register("material/wither_bone", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> CURSE_GOLD_INGOT =
             ITEMS.register("material/curse_gold_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> DRAGON_INGOT =
+            ITEMS.register("material/dragon_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CURSE_SOUL =
+            ITEMS.register("material/curse_soul", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CURSE_STAR =
+            ITEMS.register("material/curse_star", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)));
     public static final DeferredItem<ArmorItem> DRAGON_SCALE_HELMET = ITEMS.register(
             "dragon_scale_helmet",
-            () -> new ArmorItem(ModArmorMaterials.DRAGON_SCALE, ArmorItem.Type.HELMET,  new Item.Properties().stacksTo(1))
+            () -> new DragonScaleArmorItem(ModArmorMaterials.DRAGON_INGOT, ArmorItem.Type.HELMET,  new Item.Properties().stacksTo(1).durability(1000))
     );
     public static final DeferredItem<ArmorItem> DRAGON_SCALE_CHESTPLATE = ITEMS.register(
             "dragon_scale_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.DRAGON_SCALE, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1))
+            () -> new DragonScaleArmorItem(ModArmorMaterials.DRAGON_INGOT, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).durability(1000))
     );
     public static final DeferredItem<ArmorItem> DRAGON_SCALE_LEGGINGS = ITEMS.register(
             "dragon_scale_leggings",
-            () -> new ArmorItem(ModArmorMaterials.DRAGON_SCALE, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1))
+            () -> new DragonScaleArmorItem(ModArmorMaterials.DRAGON_INGOT, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).durability(1000))
     );
     public static final DeferredItem<ArmorItem> DRAGON_SCALE_BOOTS = ITEMS.register(
             "dragon_scale_boots",
-            () -> new ArmorItem(ModArmorMaterials.DRAGON_SCALE, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1))
+            () -> new DragonScaleArmorItem(ModArmorMaterials.DRAGON_INGOT, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).durability(1000))
     );
+
+
 
 
 

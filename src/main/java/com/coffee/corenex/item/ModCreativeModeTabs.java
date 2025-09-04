@@ -2,12 +2,20 @@ package com.coffee.corenex.item;
 
 import com.coffee.corenex.Corenex;
 import com.coffee.corenex.block.ModBlocks;
+import com.coffee.corenex.effect.ModEffects;
+import com.coffee.corenex.potions.ModPotions;
+import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionContents;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
 
 import java.util.function.Supplier;
 
@@ -29,6 +37,9 @@ public class ModCreativeModeTabs {
                           output.accept(Moditems.DRAGON_SCALE);
                           output.accept(Moditems.WITHER_BONE);
                           output.accept(Moditems.CURSE_GOLD_INGOT);
+                          output.accept(Moditems.DRAGON_INGOT);
+                          output.accept(Moditems.CURSE_SOUL);
+                          output.accept(Moditems.CURSE_STAR);
                           output.accept(Moditems.DRAGON_SCALE_HELMET);
                           output.accept(Moditems.DRAGON_SCALE_CHESTPLATE);
                           output.accept(Moditems.DRAGON_SCALE_LEGGINGS);
@@ -36,11 +47,29 @@ public class ModCreativeModeTabs {
 
                           output.accept(ModBlocks.DRAGON_SCALE_BLOCK);
 
+                          output.accept(PotionContents.createItemStack(Items.POTION, ModPotions.CURSE_POTION));
+                          output.accept(PotionContents.createItemStack(Items.SPLASH_POTION, ModPotions.CURSE_POTION));
+                          output.accept(PotionContents.createItemStack(Items.LINGERING_POTION, ModPotions.CURSE_POTION));
+                          output.accept(PotionContents.createItemStack(Items.TIPPED_ARROW, ModPotions.CURSE_POTION));
+
+
+
+
+
 
                     }).build());
+
+
+
+
+
+
 
     public static void resgister(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
+
+
+
 }
 

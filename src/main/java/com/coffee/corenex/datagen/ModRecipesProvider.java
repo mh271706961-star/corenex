@@ -38,6 +38,49 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(ModBlocks.DRAGON_SCALE_BLOCK)
                 .unlockedBy(getHasName(ModBlocks.DRAGON_SCALE_BLOCK), has(ModBlocks.DRAGON_SCALE_BLOCK))
                 .save(recipeOutput);
+        // 龙鳞锭配方（需要龙鳞）
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Moditems.DRAGON_INGOT.get())
+                .pattern("###")
+                .pattern("#X#")
+                .pattern("###")
+                .define('X', Items.NETHERITE_INGOT)
+                .define('#', Moditems.DRAGON_SCALE)
+                .unlockedBy(getHasName(Moditems.DRAGON_SCALE), has(Moditems.DRAGON_SCALE))
+                .save(recipeOutput);
+        // 龙鳞头盔配方（需要龙首）
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, Moditems.DRAGON_SCALE_HELMET.get())
+                .pattern("###")
+                .pattern("#X#")
+                .define('#', Moditems.DRAGON_INGOT)
+                .define('X', Items.DRAGON_HEAD)
+                .unlockedBy("has_dragon_head", has(Items.DRAGON_HEAD))
+                .save(recipeOutput);
+
+        // 龙鳞胸甲配方
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, Moditems.DRAGON_SCALE_CHESTPLATE.get())
+                .pattern("# #")
+                .pattern("###")
+                .pattern("###")
+                .define('#', Moditems.DRAGON_INGOT)
+                .unlockedBy(getHasName(Moditems.DRAGON_INGOT), has(Moditems.DRAGON_INGOT))
+                .save(recipeOutput);
+
+        // 龙鳞护腿配方
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, Moditems.DRAGON_SCALE_LEGGINGS.get())
+                .pattern("###")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', Moditems.DRAGON_INGOT)
+                .unlockedBy(getHasName(Moditems.DRAGON_INGOT), has(Moditems.DRAGON_INGOT))
+                .save(recipeOutput);
+
+        // 龙鳞靴子配方
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, Moditems.DRAGON_SCALE_BOOTS.get())
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', Moditems.DRAGON_INGOT)
+                .unlockedBy(getHasName(Moditems.DRAGON_SCALE), has(Moditems.DRAGON_SCALE))
+                .save(recipeOutput);
         //如果有原版物品， .save(recipeOutput, TutorialMod.MOD_ID + ":" + "sugar_from_beetroot");
 
 

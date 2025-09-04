@@ -1,9 +1,16 @@
 package com.coffee.corenex;
 
 import com.coffee.corenex.block.ModBlocks;
+import com.coffee.corenex.effect.ModEffects;
+
 import com.coffee.corenex.item.ModCreativeModeTabs;
 import com.coffee.corenex.item.Moditems;
+import com.coffee.corenex.network.TeleportPacket;
+import com.coffee.corenex.potions.ModPotions;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -38,9 +45,15 @@ public class Corenex {
         Moditems.register(modEventBus);
         // 然后注册方块
         ModBlocks.register(modEventBus);
+        // 注册效果
+        ModEffects.EFFECTS.register(modEventBus);
+        // 注册药水
+        ModPotions.POTIONS.register(modEventBus);
 
 
         ModCreativeModeTabs.resgister(modEventBus);
+        // 在构造函数中添加网络监听
+        modEventBus.addListener(this::registerPayloadHandlers);
 
     
 
@@ -69,9 +82,18 @@ public class Corenex {
         Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
     }
 
+    // 添加注册网络包的方法
+    private void registerPayloadHandlers(RegisterPayloadHandlersEvent event) {
+        final PayloadRegistrar registrar = event.registrar(Corenex.MOD_ID);
+        registrar.playToServer(TeleportPacket.TYPE, TeleportPacket.STREAM_CODEC, TeleportPacket::handle);
+    }
+
     // 注册并添加物品到创造模式物品栏
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
+    }
+    public static ResourceLocation id(String path) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

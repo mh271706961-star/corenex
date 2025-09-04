@@ -1,11 +1,19 @@
 {
   "block.corenex.dragon_scale_block": "末影龙鳞块",
+  "effect.corenex.curse": "诅咒",
   "item.corenex.dragon_scale_boots": "末影龙鳞靴子",
   "item.corenex.dragon_scale_chestplate": "末影龙鳞胸甲",
   "item.corenex.dragon_scale_helmet": "末影龙鳞头盔",
   "item.corenex.dragon_scale_leggings": "末影龙鳞护腿",
   "item.corenex.material.curse_gold_ingot": "被诅咒的金锭",
+  "item.corenex.material.curse_soul": "被诅咒的灵魂",
+  "item.corenex.material.curse_star": "诅咒之星",
+  "item.corenex.material.dragon_ingot": "龙鳞合金锭",
   "item.corenex.material.dragon_scale": "末影龙鳞",
   "item.corenex.material.wither_bone": "凋零之骨",
+  "item.minecraft.lingering_potion.effect.curse_potion": "滞留型诅咒药水",
+  "item.minecraft.potion.effect.curse_potion": "诅咒药水",
+  "item.minecraft.splash_potion.effect.curse_potion": "喷溅型诅咒药水",
+  "item.minecraft.tipped_arrow.effect.curse_potion": "诅咒之箭",
   "itemgroup.corenex_tab": "界核"
 }

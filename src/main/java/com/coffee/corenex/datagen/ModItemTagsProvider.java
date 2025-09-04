@@ -20,6 +20,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        this.tag(ItemTags.HEAD_ARMOR).add(Moditems.DRAGON_SCALE_HELMET.get());
+        this.tag(ItemTags.CHEST_ARMOR).add(Moditems.DRAGON_SCALE_CHESTPLATE.get());
+        this.tag(ItemTags.FOOT_ARMOR).add(Moditems.DRAGON_SCALE_BOOTS.get());
+        this.tag(ItemTags.LEG_ARMOR).add(Moditems.DRAGON_SCALE_LEGGINGS.get());
+
 
 
 

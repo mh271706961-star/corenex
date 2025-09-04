@@ -19,28 +19,28 @@ public class ModArmorMaterials {
     public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS =
             DeferredRegister.create(BuiltInRegistries.ARMOR_MATERIAL, Corenex.MOD_ID);
 
-    public static final Holder<ArmorMaterial> DRAGON_SCALE =
-            ARMOR_MATERIALS.register("dragon_scale", () -> new ArmorMaterial(
+    public static final Holder<ArmorMaterial> DRAGON_INGOT =
+            ARMOR_MATERIALS.register("dragon_ingot", () -> new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                         map.put(ArmorItem.Type.BOOTS, 5);
-                        map.put(ArmorItem.Type.LEGGINGS, 10);
-                        map.put(ArmorItem.Type.CHESTPLATE, 12);
+                        map.put(ArmorItem.Type.LEGGINGS, 8);
+                        map.put(ArmorItem.Type.CHESTPLATE, 10);
                         map.put(ArmorItem.Type.HELMET, 5);
                         map.put(ArmorItem.Type.BODY, 4);
                     }),
-                    20,
+                    30,
                     SoundEvents.ARMOR_EQUIP_GENERIC,
-                    () -> Ingredient.of(Moditems.DRAGON_SCALE),
+                    () -> Ingredient.of(Moditems.DRAGON_INGOT),
                     List.of(
                             new ArmorMaterial.Layer(
-                                    ResourceLocation.fromNamespaceAndPath(Corenex.MOD_ID, "dragon_scale")
+                                    ResourceLocation.fromNamespaceAndPath(Corenex.MOD_ID, "dragon_ingot")
                             )
 //                            new ArmorMaterial.Layer(
 //                                    ResourceLocation.fromNamespaceAndPath(Corenex.MOD_ID, "dragon_scale"), "_overlay", true
 //                            )
                     ),
                     5,
-                    0.5f
+                    0.2f
 
             ));
 

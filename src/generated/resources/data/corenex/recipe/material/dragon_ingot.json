@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "corenex:material/dragon_scale"
+    },
+    "X": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "corenex:material/dragon_ingot"
+  }
+}
